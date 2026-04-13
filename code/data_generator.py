@@ -24,10 +24,7 @@ class DataGenerator(object):
     def load_data(self, data_num):
         data_dir = self.data_dir
 
-        file_name = f'{self.split}_with_stability.pickle' 
-        if not os.path.exists(os.path.join(data_dir, file_name)):
-             file_name = f'{self.split}.pickle'
-
+        file_name = f'{self.split}.pickle' 
         with open(os.path.join(data_dir, file_name), 'rb') as f:
             self.data = cPickle.load(f)
 

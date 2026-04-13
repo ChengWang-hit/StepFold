@@ -1,0 +1,11 @@
+{
+    "log_dir": "logs",
+    "train_data_dir": "data/bpRNA_1m",
+    "test_data_dir": "data/bpRNA_1m",
+
+    "epochs": 1000,
+    "batch_size": 2,
+    "lr": 1e-4,
+    "pos_weight": 3,
+    "alpha": 1.3
+}

@@ -1,0 +1,16 @@
+{
+  "name": "seq3",
+  "length": 117,
+  "num_pairs": 33,
+  "threshold": 0.5,
+  "checkpoint_path": "ckpt/training_all.pt",
+  "arch_config_path": "configs/Architecture.json",
+  "files": {
+    "fasta": "sequence.fasta",
+    "bpseq": "prediction.bpseq",
+    "probability_matrix_npy": "probability_matrix.npy",
+    "binary_contact_map_npy": "binary_contact_map.npy",
+    "probability_heatmap_png": "probability_heatmap.png",
+    "structure_arc_png": "structure_arc.png"
+  }
+}

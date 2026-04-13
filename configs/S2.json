@@ -1,0 +1,13 @@
+{
+    "log_dir": "logs",
+    "train_data_dir1": "data/RNAStralign",
+    "train_data_dir2": "data/bpRNA_1m",
+    "train_data_dir3": "data/PDB",
+    "test_data_dir": "data/PDB",
+
+    "epochs": 1000,
+    "batch_size": 1,
+    "lr": 1e-4,
+    "pos_weight": 15,
+    "alpha": 1.5
+}

@@ -1,0 +1,15 @@
+{
+    "min_distance": 20,
+    "max_distance": 100,
+    "start_ratio": 0.2,
+    "growth_power": 1.5,
+
+    "helices_num": 5,
+    "embedding_dim": 64,
+    "K_local": 8,
+    "K_global": 4,
+    "ff_kernel_size": 3,
+    "ff_expansion": 2,
+    "ff_depth": 1,
+    "threshold": 0.5
+}

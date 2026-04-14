@@ -120,7 +120,7 @@ def main():
     
     ckpt_list = ['S1', 'S1_aug', 'S2', 'S2', 'S2', 'S2', 'S2', 'S3', 'S4']
     
-    for (dataset, split), ckpt in list(zip(dataset_list, ckpt_list))[8:9]:
+    for (dataset, split), ckpt in list(zip(dataset_list, ckpt_list)):
         inference_data(dataset, split, ckpt, config, feature_gen, model, device)
 
 if __name__ == '__main__':

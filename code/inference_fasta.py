@@ -11,8 +11,6 @@ import matplotlib.pyplot as plt
 from network import StepFoldNet, HelixCenterMaskedPriorGenerator
 from utils import create_dynamic_start_band_masks
 
-os.chdir('/home/wangcheng/project/RNA/StepFold/github_version/StepFold_open_source')
-
 ARCH_CONFIG_PATH = "configs/Architecture.json"
 
 CHECKPOINT_PATH = "ckpt/training_all.pt"

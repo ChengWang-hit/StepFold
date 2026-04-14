@@ -1,0 +1,119 @@
+# StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19556209.svg)](https://doi.org/10.5281/zenodo.19556209)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+This repository contains the official implementation for the paper: **"StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction."**
+
+---
+
+## 📑 Table of Contents
+- [Preparation Workflow](#-preparation-workflow)
+  - [1. Environment Setup](#1-environment-setup)
+  - [2. Download Datasets & Checkpoints](#2-download-datasets--checkpoints)
+  - [3. Preprocessing](#3-preprocessing)
+- [Reproducing Paper Results](#-reproducing-paper-results)
+- [Inference on New Sequences](#-inference-on-new-sequences)
+- [Training from Scratch](#-training-from-scratch)
+- [Citation](#-citation)
+
+---
+
+## 🛠 Preparation Workflow
+
+### 1. Environment Setup
+We use [`uv`](https://github.com/astral-sh/uv), an extremely fast Python package and project manager, to configure the environment. 
+
+Ensure you have `uv` installed, then run the following command in the project root to install all dependencies specified in `pyproject.toml`:
+
+```bash
+# Install the dependencies
+uv sync
+````
+
+### 2\. Download Datasets & Checkpoints
+
+The complete datasets and pre-trained model checkpoints are hosted on Zenodo.
+
+  * **Download Link:** [10.5281/zenodo.19556209](https://www.google.com/url?sa=E&source=gmail&q=https://doi.org/10.5281/zenodo.19556209)
+
+After downloading and extracting the archives, please organize them in the root directory following this exact structure:
+
+```text
+StepFold/
+├── ckpt/
+│   ├── S1.pt
+│   ├── S1_aug.pt
+│   ├── S2.pt
+│   ├── S3.pt
+│   ├── S4.pt
+│   └── training_all.pt
+├── code/
+├── configs/
+├── data/
+│   ├── ArchiveII/
+│   ├── bpRNA_1m/
+│   ├── bpRNA_new/
+│   ├── PDB/
+│   └── RNAStralign/
+├── pyproject.toml           
+└── README.md                
+```
+
+### 3\. Preprocessing
+
+Before running training or inference, you must generate the mask matrices required by the model. Run the following script:
+
+```bash
+python code/generate_mask_matrix.py
+```
+
+-----
+
+## 📊 Reproducing Paper Results
+
+To reproduce the comparative results presented in our paper for all scenarios (**S1 including data augmentation, S2, S3, and S4**), you can simply execute the test script:
+
+```bash
+python code/test_all.py
+```
+
+This script will automatically load the checkpoints, evaluate them against the test datasets, and print out the F1-scores, precision, and recall metrics reported in the manuscript.
+
+-----
+
+## 🧬 Inference on New Sequences
+
+You can easily use our pre-trained model to predict the secondary structure of your own custom RNA sequences.
+
+**Step 1:** Add your RNA sequences to the demo FASTA file located at `inference_demo/demo.fasta`.
+
+**Step 2:** Run the inference script:
+
+```bash
+python code/inference_fasta.py
+```
+
+**Step 3:** The predicted secondary structure results will be saved and output to the `inference_demo/output/` directory.
+
+-----
+
+## 🚀 Training from Scratch
+
+If you wish to retrain the models from scratch (S1 through S4) to reproduce the training process, execute the corresponding training scripts:
+
+```bash
+# Train Stage 1
+python code/train_S1.py
+
+# Train Stage 2
+python code/train_S2.py
+
+# Train Stage 3
+python code/train_S3.py
+
+# Train Stage 4
+python code/train_S4.py
+```
+
+-----

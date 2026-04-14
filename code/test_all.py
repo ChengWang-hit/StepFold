@@ -82,8 +82,6 @@ def inference_data(dataset, split, ckpt, config, feature_gen, model, device):
                                   collate_fn=collate_test)
     
     state_dict = torch.load(f"{config['ckpt_path']}/{ckpt}.pt", map_location=device)
-    # state_dict = torch.load(f"{config['ckpt_path']}/training_all.pt", map_location=device)
-    # state_dict = torch.load(f"/home/wangcheng/project/RNA/StepFold/github_version/StepFold_nclab/StepFold_best_E75_F0.6942.pt", map_location=device)
     model.load_state_dict(state_dict)
 
     avg_f1, avg_p, avg_r = test(model, feature_gen, test_loader, device, config)
@@ -93,7 +91,6 @@ def main():
     config_path = 'configs/Architecture.json'
     config = process_config(config_path)
     config['ckpt_path'] = 'ckpt'
-    # config['ckpt_path'] = '/home/wangcheng/project/RNA/StepFold/github_version/StepFold_nclab/best_ckpt'
     config['data_dir'] = 'data'
     device = torch.device(f"cuda:2")
     

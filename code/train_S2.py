@@ -121,7 +121,6 @@ def train(model, feature_gen, loss_fn, train_loader, optimizer, device, config):
     return avg_loss
 
 def main():
-    os.chdir('/home/wangcheng/project/RNA/StepFold/github_version/StepFold_open_source')
     parser = argparse.ArgumentParser()
     parser.add_argument('--architecture_config_path', type=str, default='configs/Architecture.json', help='Path to the architecture config file')
     parser.add_argument('--training_config_path', type=str, default='configs/S2.json', help='Path to the training config file')
@@ -150,12 +149,10 @@ def main():
     train_data2 = DataGenerator(config['train_data_dir2'], 'train_with_indices', mode='train')
     train_data3 = DataGenerator(config['train_data_dir3'], 'TR1_with_indices', mode='train')
     train_data4 = DataGenerator(config['train_data_dir3'], 'VL1_with_indices', mode='train')
-    train_data5 = DataGenerator('/home/wangcheng/project/RNA/StepFold/data/bpRNA_1m', 'aug', mode='train')
     
     train_data1.merge(train_data2)
     train_data1.merge(train_data3)
     train_data1.merge(train_data4)
-    train_data1.merge(train_data5)
     train_dataset = Dataset(train_data1)
     
     global_max_len = train_data1.max_len

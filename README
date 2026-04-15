@@ -1,41 +1,67 @@
 # StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19556209.svg)](https://doi.org/10.5281/zenodo.19556209)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[](https://doi.org/10.5281/zenodo.19556209)
+[](https://doi.org/10.24433/CO.9487656.v1)
+[](https://creativecommons.org/licenses/by/4.0/)
 
-This repository contains the official implementation for the paper: **"StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction."**
+This repository contains the official implementation for the paper: **''Cheng Wang, Haozhuo Zheng, Gaurav Sharma, Maozu Guo, Quan Zou and Yang Liu. StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction.''**
 
----
+**StepFold** is a novel, multi-step generation framework designed for accurate and efficient RNA secondary structure prediction. Unlike conventional "one-step" deep learning methods, StepFold mimics the hierarchical nature of RNA folding by predicting structures progressively—from local substructures to global long-range interactions.
+
+-----
+
+## ⚡ Quick Reproducibility via Code Ocean
+
+For an immediate, zero-setup experience, we provide an interactive compute capsule on Code Ocean: **[https://doi.org/10.24433/CO.9487656.v1](https://doi.org/10.24433/CO.9487656.v1)**.
+
+This capsule enables rapid reproduction of paper results and allows users to perform RNA secondary structure prediction on new sequences using the pre-trained parameters directly within your browser.
+
+-----
 
 ## 📑 Table of Contents
-- [Preparation Workflow](#-preparation-workflow)
-  - [1. Environment Setup](#1-environment-setup)
-  - [2. Download Datasets & Checkpoints](#2-download-datasets--checkpoints)
-  - [3. Preprocessing](#3-preprocessing)
-- [Reproducing Paper Results](#-reproducing-paper-results)
-- [Inference on New Sequences](#-inference-on-new-sequences)
-- [Training from Scratch](#-training-from-scratch)
-- [Citation](#-citation)
 
----
+  - [Preparation Workflow](https://www.google.com/search?q=%23-preparation-workflow)
+      - [1. Clone & Environment Setup](https://www.google.com/search?q=%231-clone--environment-setup)
+      - [2. Download Datasets & Checkpoints](https://www.google.com/search?q=%232-download-datasets--checkpoints)
+      - [3. Preprocessing](https://www.google.com/search?q=%233-preprocessing)
+  - [Reproducing Paper Results](https://www.google.com/search?q=%23-reproducing-paper-results)
+  - [Inference on New Sequences](https://www.google.com/search?q=%23-inference-on-new-sequences)
+  - [Training from Scratch](https://www.google.com/search?q=%23-training-from-scratch)
+  - [Citation](https://www.google.com/search?q=%23-citation)
+
+-----
 
 ## 🛠 Preparation Workflow
 
-### 1. Environment Setup
-We use [`uv`](https://github.com/astral-sh/uv), an extremely fast Python package and project manager, to configure the environment. 
+### 1\. Clone & Environment Setup
 
-Ensure you have `uv` installed, then run the following command in the project root to install all dependencies specified in `pyproject.toml`:
+First, clone the repository to your local machine and navigate into the project directory:
 
 ```bash
-# Install the dependencies
+git clone https://github.com/ChengWang-hit/StepFold.git
+cd StepFold
+```
+
+We use [`uv`], an extremely fast Python package and project manager, to configure the environment.
+
+If you don't have `uv` installed yet, you can install it quickly using `pip` (or refer to their [official installation guide](https://docs.astral.sh/uv/getting-started/installation/) for other methods):
+
+```bash
+pip install uv
+```
+
+Once `uv` is installed, run the following command in the project root to synchronize and install all dependencies specified in `pyproject.toml`:
+
+```bash
+# Install all required dependencies
 uv sync
-````
+```
 
 ### 2\. Download Datasets & Checkpoints
 
 The complete datasets and pre-trained model checkpoints are hosted on Zenodo.
 
-  * **Download Link:** [10.5281/zenodo.19556209](https://www.google.com/url?sa=E&source=gmail&q=https://doi.org/10.5281/zenodo.19556209)
+  * **Download Link:** [10.5281/zenodo.19556209](https://doi.org/10.5281/zenodo.19556209)
 
 After downloading and extracting the archives, please organize them in the root directory following this exact structure:
 
@@ -115,5 +141,3 @@ python code/train_S3.py
 # Train Stage 4
 python code/train_S4.py
 ```
-
------

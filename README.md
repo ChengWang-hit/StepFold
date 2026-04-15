@@ -22,14 +22,13 @@ This capsule enables rapid reproduction of paper results and allows users to per
 
 ## 📑 Table of Contents
 
-  - [Preparation Workflow](https://www.google.com/search?q=%23-preparation-workflow)
-      - [1. Clone & Environment Setup](https://www.google.com/search?q=%231-clone--environment-setup)
-      - [2. Download Datasets & Checkpoints](https://www.google.com/search?q=%232-download-datasets--checkpoints)
-      - [3. Preprocessing](https://www.google.com/search?q=%233-preprocessing)
-  - [Reproducing Paper Results](https://www.google.com/search?q=%23-reproducing-paper-results)
-  - [Inference on New Sequences](https://www.google.com/search?q=%23-inference-on-new-sequences)
-  - [Training from Scratch](https://www.google.com/search?q=%23-training-from-scratch)
-  - [Citation](https://www.google.com/search?q=%23-citation)
+- [Preparation Workflow](#-preparation-workflow)
+  - [1. Clone & Environment Setup](#1-clone--environment-setup)
+  - [2. Download Datasets & Checkpoints](#2-download-datasets--checkpoints)
+  - [3. Preprocessing](#3-preprocessing)
+- [Reproducing Paper Results](#-reproducing-paper-results)
+- [Inference on New Sequences](#-inference-on-new-sequences)
+- [Training from Scratch](#-training-from-scratch)
 
 -----
 
@@ -48,7 +47,7 @@ git clone https://github.com/ChengWang-hit/StepFold.git
 cd StepFold
 ```
 
-We use [`uv`], an extremely fast Python package and project manager, to configure the environment.
+We use [`uv`](https://github.com/astral-sh/uv), an extremely fast Python package and project manager, to configure the environment.
 
 If you don't have `uv` installed yet, you can install it quickly using `pip` (or refer to their [official installation guide](https://docs.astral.sh/uv/getting-started/installation/) for other methods):
 

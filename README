@@ -1,10 +1,12 @@
 # StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction
 
-[](https://doi.org/10.5281/zenodo.19556209)
-[](https://doi.org/10.24433/CO.9487656.v1)
-[](https://creativecommons.org/licenses/by/4.0/)
+[![Zenodo DOI](https://img.shields.io/badge/Zenodo-10.5281/zenodo.19556209-blue.svg)](https://doi.org/10.5281/zenodo.19556209)
+[![Code Ocean DOI](https://img.shields.io/badge/Code%20Ocean-10.24433/CO.9487656.v1-blue.svg)](https://doi.org/10.24433/CO.9487656.v1)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains the official implementation for the paper: **''Cheng Wang, Haozhuo Zheng, Gaurav Sharma, Maozu Guo, Quan Zou and Yang Liu. StepFold: A Progressive Local-to-Global Generation Framework for RNA Secondary Structure Prediction.''**
+
+![StepFold Architecture](/StepFold.png)
 
 **StepFold** is a novel, multi-step generation framework designed for accurate and efficient RNA secondary structure prediction. Unlike conventional "one-step" deep learning methods, StepFold mimics the hierarchical nature of RNA folding by predicting structures progressively—from local substructures to global long-range interactions.
 
@@ -35,6 +37,10 @@ This capsule enables rapid reproduction of paper results and allows users to per
 
 ### 1\. Clone & Environment Setup
 
+**Author's Implementation:**
+* **OS:** Ubuntu 22.04 (Linux kernel 6.8.0)
+* **GPU & CUDA:** NVIDIA GPU with Driver 560.35.03, CUDA 12.6
+
 First, clone the repository to your local machine and navigate into the project directory:
 
 ```bash
@@ -55,6 +61,9 @@ Once `uv` is installed, run the following command in the project root to synchro
 ```bash
 # Install all required dependencies
 uv sync
+
+# Activate the environment
+source .venv/bin/activate
 ```
 
 ### 2\. Download Datasets & Checkpoints
